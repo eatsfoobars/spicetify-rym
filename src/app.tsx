@@ -68,6 +68,11 @@ async function update() {
   // get rating & show under track
   try {
     const rating = await fetchRYMData(title, album_title, artist_name);
+    if (Player.data.playback_id != lastTrack) {
+      // changed song already -_-
+      return;
+    }
+
     console.log('RYM rating', rating);
 
     // create rating element

@@ -85,7 +85,7 @@ async function update() {
     infoContainer.appendChild(ratingContainer);
   } catch (e: any) {
     if (e instanceof ApiError) {
-      console.log('Failed to get rym rating', e.message);
+      console.log('Failed to get RYM rating', e.message);
     } else {
       console.log('RateYourMusic API not running');
       Spicetify.showNotification('RateYourMusic API not running');

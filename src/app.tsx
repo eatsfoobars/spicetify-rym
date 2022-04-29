@@ -4,6 +4,7 @@ import { sleep } from './utils';
 
 const RATE_LIMIT_SECONDS = 15;
 
+let showedNotification = false;
 let lastTrack: string;
 let lastQuery: number;
 
@@ -88,12 +89,18 @@ async function update() {
     if (rating.bolded) ratingContainer.style.fontWeight = 'bold';
 
     infoContainer.appendChild(ratingContainer);
+    showedNotification = false;
   } catch (e: any) {
     if (e instanceof ApiError) {
       console.log('Failed to get RYM rating', e.message);
+      showedNotification = false;
     } else {
       console.log('RateYourMusic API not running');
-      Spicetify.showNotification('RateYourMusic API not running');
+
+      if (!showedNotification) {
+        Spicetify.showNotification('RateYourMusic API not running');
+        showedNotification = true;
+      }
     }
   }
 }

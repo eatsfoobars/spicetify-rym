@@ -7,10 +7,14 @@
     "build-local": "spicetify-creator --out=dist --minify",
     "watch": "spicetify-creator --watch"
   },
-  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "string-similarity": "^4.0.4"
+  },
   "devDependencies": {
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
+    "@types/string-similarity": "^4.0.0",
     "spicetify-creator": "^1.0.9"
   }
 }

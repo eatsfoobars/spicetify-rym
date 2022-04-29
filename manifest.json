@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Spicetify RateYourMusic",
+    "description": "Spicetify extension to display RateYourMusic statistics under the current song details.",
+    "preview": "assets/preview.png",
+    "main": "rym.js",
+    "readme": "README.md"
+  }
+]

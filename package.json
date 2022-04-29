@@ -15,6 +15,6 @@
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "@types/string-similarity": "^4.0.0",
-    "spicetify-creator": "^1.0.9"
+    "spicetify-creator": "^1.0.10"
   }
 }

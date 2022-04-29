@@ -8,7 +8,7 @@
 
 # Installation
 
-Download `rym.js` and place it inside your Spicetify extensions folder:
+Download [rym.js](./rym.js?raw=1) and place it inside your Spicetify extensions folder:
 
 | Platform            | Path                                   |
 | ------------------- | -------------------------------------- |

@@ -1,6 +1,6 @@
-# Spicetify RateYourMusic
+# Spicetify RateYourMusic Statistics
 
-[Spicetify](https://github.com/spicetify/spicetify-cli) extension to display RateYourMusic statistics under the current song details.
+[Spicetify](https://github.com/spicetify/spicetify-cli) extension to display RateYourMusic song rating statistics under the current song details.
 
 <p align="center">
   <img alt="preview" src="./assets/preview.png">

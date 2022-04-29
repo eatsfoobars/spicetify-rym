@@ -8,6 +8,12 @@
 
 # Installation
 
+### Marketplace
+
+You can easily install this extension from the [Spicetify Marketplace](https://github.com/spicetify/spicetify-marketplace).
+
+### Manual
+
 Download [rym.js](./rym.js?raw=1) and place it inside your Spicetify extensions folder:
 
 | Platform            | Path                                   |

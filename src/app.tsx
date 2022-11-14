@@ -4,7 +4,10 @@ import * as rym from './rym';
 
 import { sleep, log } from './utils';
 
+const RATE_LIMIT = 5000;
+
 let lastTrack: string;
+let lastRequest: number;
 
 let ratingContainer: HTMLAnchorElement;
 let infoContainer: HTMLElement | null;
@@ -36,6 +39,15 @@ async function update() {
   const { title, album_title, artist_name } = Player.data.track.metadata;
   if (!title || !album_title || !artist_name) return;
 
+  // check rate limit
+  const now = Date.now();
+  if (lastRequest && now - lastRequest < RATE_LIMIT) {
+    console.log('rate limit', now - lastRequest);
+    return;
+  }
+
+  lastRequest = now;
+
   // get rating & show under track
   try {
     const rating = await rym.fetchRYMData(title, artist_name, album_title);
@@ -43,6 +55,8 @@ async function update() {
       // changed song already -_-
       return;
     }
+
+    if (!rating.ratings) return;
 
     log('Got rating', rating);
 

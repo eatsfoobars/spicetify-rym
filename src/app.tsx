@@ -4,7 +4,7 @@ import * as rym from './rym';
 
 import { sleep, log } from './utils';
 
-const RATE_LIMIT = 5000;
+const RATE_LIMIT = 10 * 1000;
 
 let lastTrack: string;
 let lastRequest: number;
@@ -33,20 +33,16 @@ async function update() {
 
   clearRating();
 
-  lastTrack = id;
-
   // get track information
   const { title, album_title, artist_name } = Player.data.track.metadata;
   if (!title || !album_title || !artist_name) return;
 
   // check rate limit
   const now = Date.now();
-  if (lastRequest && now - lastRequest < RATE_LIMIT) {
-    console.log('rate limit', now - lastRequest);
-    return;
-  }
+  if (lastRequest && now - lastRequest < RATE_LIMIT) return;
 
   lastRequest = now;
+  lastTrack = id;
 
   // get rating & show under track
   try {

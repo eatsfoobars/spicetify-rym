@@ -16,7 +16,7 @@ interface Song {
 
 async function getArtistPage(song: Song) {
   // use duckduckgo to find the artist page since it's more accurate than rym's search bar
-  const url = `https://duckduckgo.com/?q=%5Csite%3Arateyourmusic.com ${song.artist}`;
+  const url = `https://duckduckgo.com/?q=%5Csite%3Arateyourmusic.com%20${encodeURIComponent(song.artist)}`;
   const res = await fetch(url);
 
   // parse body to get redirect url
